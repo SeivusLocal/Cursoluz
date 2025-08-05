@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Par LED - Curso de Iluminação</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: #e0e0e0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .pergunta {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #333;
+      background-color: transparent;
+      color: inherit;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .pergunta:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .resposta {
+      display: none;
+      margin-bottom: 20px;
+    }
+
+    .modo-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    video {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .voltar {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      color: inherit;
+    }
+
+  </style>
+</head>
+<body>
+  <button class="modo-btn" onclick="toggleModo()">☀️/🌑</button>
+  <h1>Par LED</h1>
+
+  <button class="pergunta" onclick="mostrar(0)">O que é e para que serve o Par LED?</button>
+  <div class="resposta">
+    <p><strong>Explicação em vídeo:</strong></p>
+    <video controls>
+      <source src="videos/parled-oquee.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+  </div>
+
+  <button class="pergunta" onclick="mostrar(1)">Quais os principais tipos de Par LED?</button>
+  <div class="resposta">
+    <p><strong>Explicação em vídeo:</strong></p>
+    <video controls>
+      <source src="videos/tipos-parled.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+  </div>
+
+  <button class="pergunta" onclick="mostrar(2)">Como funciona o sistema de cores RGB e RGBW?</button>
+  <div class="resposta">
+    <p><strong>Explicação em vídeo:</strong></p>
+    <video controls>
+      <source src="videos/cores-rgbw.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+  </div>
+
+  <button class="pergunta" onclick="mostrar(3)">Cuidados ao utilizar o Par LED em eventos</button>
+  <div class="resposta">
+    <p><strong>Explicação em vídeo:</strong></p>
+    <video controls>
+      <source src="videos/cuidados-uso.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+  </div>
+
+  <button class="pergunta" onclick="mostrar(4)">Onde o Par LED é mais utilizado?</button>
+  <div class="resposta">
+    <p><strong>Explicação em vídeo:</strong></p>
+    <video controls>
+      <source src="videos/uso-eventos.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+  </div>
+
+  <button class="pergunta" onclick="mostrar(5)">Como configurar o Par LED no modo DMX?</button>
+  <div class="resposta">
+    <p><strong>Explicação em vídeo:</strong></p>
+    <video controls>
+      <source src="videos/configuracao-dmx.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+  </div>
+
+  <button class="pergunta" onclick="mostrar(6)">Manutenção básica do Par LED</button>
+  <div class="resposta">
+    <p><strong>Explicação em vídeo:</strong></p>
+    <video controls>
+      <source src="videos/manutencao-basica.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+  </div>
+
+  <a href="introducao.html" class="voltar">⬅ Voltar para introdução</a>
+  <a href="par-led-dmx.html" class="voltar">Avançar para DMX ➡</a>
+
+  <script>
+    function mostrar(index) {
+      const respostas = document.querySelectorAll('.resposta');
+      respostas[index].style.display = respostas[index].style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleModo() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>

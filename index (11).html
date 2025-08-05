@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curso de Iluminação para Eventos</title>
+  <style>
+    :root {
+      --cor-fundo-dia: #f0f0f0;
+      --cor-texto-dia: #111;
+      --cor-fundo-noite: #111;
+      --cor-texto-noite: #e0e0e0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--cor-fundo-dia);
+      color: var(--cor-texto-dia);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .equipamento {
+      font-size: 90px;
+      animation: pulse 1.8s infinite ease-in-out;
+      margin-bottom: 20px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: transparent;
+      color: black;
+      border: 2px solid black;
+      border-radius: 0;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .tema-toggle {
+      margin-top: 30px;
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .noite {
+      background-color: var(--cor-fundo-noite);
+      color: var(--cor-texto-noite);
+    }
+
+    .noite button {
+      color: white;
+      border-color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="equipamento" title="Equipamento de iluminação">💡</div>
+    <h1>Curso de Iluminação para Eventos</h1>
+    <p>Aprenda do zero até o nível avançado.</p>
+    <button onclick="comecarCurso()">Começar</button>
+    <div class="tema-toggle" onclick="alternarTema()">☀️ / 🌑</div>
+  </div>
+
+  <script>
+    const body = document.body;
+    let modoNoite = false;
+
+    function alternarTema() {
+      modoNoite = !modoNoite;
+      if (modoNoite) {
+        body.classList.add('noite');
+      } else {
+        body.classList.remove('noite');
+      }
+    }
+
+    function comecarCurso() {
+      window.location.href = "introducao.html";
+    }
+  </script>
+</body>
+</html>

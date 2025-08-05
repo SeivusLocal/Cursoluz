@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Introdução - Curso de Iluminação</title>
+  <style>
+    :root {
+      --cor-fundo-dia: #f0f0f0;
+      --cor-texto-dia: #111;
+      --cor-fundo-noite: #111;
+      --cor-texto-noite: #f5f5f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--cor-fundo-dia);
+      color: var(--cor-texto-dia);
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.noite {
+      background-color: var(--cor-fundo-noite);
+      color: var(--cor-texto-noite);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .pergunta {
+      background-color: transparent;
+      border: 2px solid currentColor;
+      padding: 12px 16px;
+      margin: 10px 0;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .resposta {
+      display: none;
+      margin-top: 8px;
+      padding: 10px;
+      border-left: 3px solid currentColor;
+    }
+
+    .navigation {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .navigation button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      background: transparent;
+      border: 2px solid currentColor;
+      cursor: pointer;
+    }
+
+    .tema-toggle {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="tema-toggle" onclick="alternarTema()">☀️ / 🌑</div>
+  <h1>INTRODUÇÃO</h1>
+
+  <button class="pergunta" onclick="mostrar(0)">O que é iluminação para eventos?</button>
+  <div class="resposta">É o conjunto de equipamentos e técnicas usados para criar o ambiente visual de um evento, desde festas até shows e conferências.</div>
+
+  <button class="pergunta" onclick="mostrar(1)">Por que ela é essencial?</button>
+  <div class="resposta">Porque transforma a experiência do público, gera atmosfera, valoriza o espaço e garante segurança visual em ambientes escuros.</div>
+
+  <button class="pergunta" onclick="mostrar(2)">Quantas empresas existem no Brasil?</button>
+  <div class="resposta">Mais de 3.000 empresas no setor de eventos no Brasil inteiro, muitas das quais contratam técnicos e auxiliares com disponibilidade para viagens.</div>
+
+  <button class="pergunta" onclick="mostrar(3)">Oportunidades no mercado de técnicos e auxiliares?</button>
+  <div class="resposta">É um mercado em expansão. Quem sabe o básico já consegue vagas em festas, casamentos, feiras e shows regionais. Profissionais com flexibilidade para viajar têm ainda mais chances.</div>
+
+  <button class="pergunta" onclick="mostrar(4)">Como começar mesmo sem diploma?</button>
+  <div class="resposta">Você não precisa de diploma. Basta seguir este curso à risca, se dedicar e buscar oportunidades com empresas locais e pequenos eventos para ganhar experiência.</div>
+
+  <button class="pergunta" onclick="mostrar(5)">Como conseguir seus primeiros eventos?</button>
+  <div class="resposta">Busque empresas locais, ofereça ajuda, monte um portfólio simples com fotos ou vídeos, e esteja sempre disponível para aprender e trabalhar nos fins de semana.</div>
+
+  <button class="pergunta" onclick="mostrar(6)">O que são e como tirar as NRs necessárias?</button>
+  <div class="resposta">São Normas Regulamentadoras de segurança. As principais são NR-10 (segurança em instalações elétricas) e NR-35 (trabalho em altura). Existem cursos rápidos online e presenciais com certificação válida em todo o Brasil.</div>
+
+  <div class="navigation">
+    <button onclick="voltar()">⬅ Voltar</button>
+    <button onclick="avancar()">Avançar ➡</button>
+  </div>
+
+  <script>
+    const respostas = document.querySelectorAll('.resposta');
+
+    function mostrar(index) {
+      respostas.forEach((r, i) => {
+        r.style.display = i === index ? (r.style.display === 'block' ? 'none' : 'block') : 'none';
+      });
+    }
+
+    function alternarTema() {
+      document.body.classList.toggle('noite');
+    }
+
+    function voltar() {
+      window.location.href = 'index.html';
+    }
+
+    function avancar() {
+      window.location.href = 'par-led.html'; // próxima página
+    }
+  </script>
+</body>
+</html>
